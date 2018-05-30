@@ -16,9 +16,8 @@ new Vue({
             if (checked) {
                 this[category].push(title);
             } else {
-                let index = this[category].indexOf(title);
-                if (index > -1) {
-                    this[category].splice(index, 1);
+                if (this[category].includes(title)) {
+                    this[category] = this[category].filter(c => c !== title);
                 }
             }
         },
